@@ -1,0 +1,11 @@
+torch
+transformers>=4.45.0
+accelerate
+bitsandbytes
+peft
+datasets
+pyyaml
+cairosvg
+pillow
+numpy
+pytest

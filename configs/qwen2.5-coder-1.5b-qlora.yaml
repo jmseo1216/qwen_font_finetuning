@@ -1,0 +1,27 @@
+# PoC default for an RTX 4090 24 GB GPU.
+model_name_or_path: Qwen/Qwen2.5-Coder-1.5B-Instruct
+train_jsonl: dataset/processed/train.jsonl
+val_jsonl: dataset/processed/val.jsonl
+output_dir: checkpoints/qwen2.5-coder-1.5b-qlora
+max_seq_length: 2048
+strict_length: false
+batch_size: 1
+eval_batch_size: 1
+grad_accumulation_steps: 16
+epochs: 5
+learning_rate: 0.0002
+warmup_ratio: 0.03
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+gradient_checkpointing: true
+bf16: true
+fp16: false
+optim: paged_adamw_8bit
+logging_steps: 10
+eval_strategy: steps
+eval_steps: 100
+save_steps: 100
+save_total_limit: 3
+report_to: none

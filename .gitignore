@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Model/data artifacts
+data/
+checkpoints/
+predictions/
+evaluation/results.json
